@@ -1,4 +1,4 @@
-🧠 Travel LLM Recommender
+**🧠 Travel LLM Recommender
 A smart, modular recommendation system that explores and compares three major techniques for travel recommendations using Large Language Models (LLMs):
 
 ✅ Prompt Engineering
@@ -9,7 +9,7 @@ A smart, modular recommendation system that explores and compares three major te
 
 🚧 This is a work-in-progress project intentionally structured to reflect real-world iterative development. Recruiters: See below for what’s complete and how each part demonstrates relevant technical skill.
 
-🔍 Project Goal
+**🔍 Project Goal
 Build a smart travel assistant that recommends destinations using natural language inputs and integrates:
 
 LLMs via Hugging Face
@@ -22,7 +22,7 @@ Text embeddings via Sentence Transformers
 
 Evaluation and optimization across LLM techniques
 
-✅ Completed Components
+**✅ Completed Components
 1. 🔧 Prompt Engineering
 Developed a structured prompt template for travel recommendations
 
@@ -50,7 +50,7 @@ Used pandas, numpy, and langchain’s document loaders for formatting
 
 Explored and visualized travel patterns to better guide model behavior
 
-🚧 In Progress
+**🚧 In Progress
 4. 🔄 RAG (Retrieval-Augmented Generation)
 Set up LangChain pipeline using:
 
@@ -70,7 +70,7 @@ Finalize vectorstore saving/loading
 
 Connect RAG to inference script for hybrid QA generation
 
-🛠️ Tech Stack
+**🛠️ Tech Stack
 Tool	Purpose
 🐍 Python	Core programming
 🧠 Hugging Face Transformers	LLMs, tokenizers, fine-tuning
@@ -97,7 +97,7 @@ travel-llm-recommender/
 │
 └── README.md               ← [You're here]
 
-✍️ What I Learned
+**✍️ What I Learned
 Fine-tuning a transformer model with custom data
 
 Data formatting best practices for NLP
@@ -108,7 +108,7 @@ Troubleshooting LangChain and Hugging Face integration
 
 Managing real-world dataset inconsistency (encoding, structure)
 
-📌 Why This Project Matters
+**📌 Why This Project Matters
 This project isn't just about the end result—it's a demonstration of:
 
 🔍 Deep understanding of LLM internals
@@ -121,7 +121,7 @@ This project isn't just about the end result—it's a demonstration of:
 
 Even though RAG is still being finalized, the depth of experimentation, full fine-tuning pipeline, and understanding of embedding-driven retrieval clearly show readiness for applied AI/ML roles.
 
-🔜 Next Steps
+**🔜 Next Steps
 Complete FAISS indexing and connect it to RAG query script
 
 Add Streamlit UI for demo
