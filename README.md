@@ -85,22 +85,22 @@ Build a smart travel assistant that recommends destinations using natural langua
 
 ---
 
-## 📁 Folder Structure
+### 📁 Folder Structure
+
+```bash
 travel-llm-recommender/
 ├── finetune/
-│ ├── prepare_data.py
-│ ├── train.py
-│ ├── dataset.jsonl
-│ └── output/
-│ └── final-model/
-│
+│   ├── prepare_data.py
+│   ├── train.py
+│   ├── dataset.jsonl
+│   └── output/
+│       └── final-model/
 ├── rag/
-│ ├── build_index.py # Indexing logic (FAISS)
-│ ├── querry_rag.py # Inference using vector store
-│
-├── datasets_raw/ # Raw CSV datasets
-│
-└── README.md # Project documentation
+│   ├── build_index.py          # Indexing logic (FAISS)
+│   ├── querry_rag.py           # Inference using vector store
+├── datasets_raw/               # Raw CSV datasets
+└── README.md                   # Project documentation
+```
 
 
 ---
@@ -144,11 +144,11 @@ This project demonstrates:
 This project reflects my commitment to building real-world AI systems that integrate LLMs, vector search, and modern machine learning workflows.
 If you're working on anything at the intersection of AI, data, or product—and want to trade ideas or collaborate—I'm always open to meaningful conversations and innovative work.
 
-💼 LinkedIn[https://www.linkedin.com/in/mohammad-abbasi-393254263/]
+💼 [LinkedIn](https://www.linkedin.com/in/mohammad-abbasi-393254263/)
 
-🧠 GitHub[https://github.com/turtlebackmendelevium]
+🧠 [GitHub](https://github.com/turtlebackmendelevium)
 
-📨 Email[ayaan.abbasi01@outlook.com]
+📨 [Email](ayaan.abbasi01@outlook.com)
 
 
 
