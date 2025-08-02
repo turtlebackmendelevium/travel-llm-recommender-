@@ -7,7 +7,7 @@ A smart, modular recommendation system that explores and compares **three major 
 - ⚙️ **Retrieval-Augmented Generation (RAG)** *(in progress)*
 
 > 🚧 This is a **work-in-progress project** intentionally structured to reflect real-world iterative development.  
-> 💼 Recruiters: This README clearly outlines what’s complete, what’s underway, and how each part reflects applied AI/ML and data engineering skills.
+> 💼 This README clearly outlines what’s complete, what’s underway, and how each part reflects applied AI/ML and data engineering skills.
 
 ---
 
@@ -128,14 +128,6 @@ This project demonstrates:
 
 ---
 
-## 📅 Timeline of Progress
-
-| Phase | Description |
-|-------|-------------|
-| Month 1 | Dataset exploration, prompt engineering |
-| Month 2 | Fine-tuning pipeline, data cleaning, JSONL generation |
-| Month 3 | LangChain-based RAG setup, ongoing indexing and optimization |
-
 ---
 
 ## 🔜 Next Steps
@@ -147,20 +139,18 @@ This project demonstrates:
 
 ---
 
-## 🗂️ License
 
-MIT License. Open to collaboration.
+🤝 Connect & Collaborate
+This project reflects my commitment to building real-world AI systems that integrate LLMs, vector search, and modern machine learning workflows.
+If you're working on anything at the intersection of AI, data, or product—and want to trade ideas or collaborate—I'm always open to meaningful conversations and innovative work.
 
----
+💼 LinkedIn[https://www.linkedin.com/in/mohammad-abbasi-393254263/]
 
-## 🤝 Let's Connect
+🧠 GitHub[https://github.com/turtlebackmendelevium]
 
-If you're a recruiter or team looking for an AI/ML intern or junior contributor with:
-- Real experience across Hugging Face, LangChain, FAISS
-- Project architecture skills
-- Attention to reproducibility and clarity
+📨 Email[ayaan.abbasi01@outlook.com]
 
-Feel free to reach out or connect via [LinkedIn](#) or [GitHub](#).
+
 
 ---
 
