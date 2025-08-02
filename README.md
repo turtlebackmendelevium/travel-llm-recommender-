@@ -1,135 +1,166 @@
-**🧠 Travel LLM Recommender
-A smart, modular recommendation system that explores and compares three major techniques for travel recommendations using Large Language Models (LLMs):
+# 🧠 Travel LLM Recommender
 
-✅ Prompt Engineering
+A smart, modular recommendation system that explores and compares **three major techniques** for travel recommendations using **Large Language Models (LLMs)**:
 
-✅ Fine-Tuning a T5 Transformer
+- ✅ **Prompt Engineering**
+- ✅ **Fine-Tuning a T5 Transformer**
+- ⚙️ **Retrieval-Augmented Generation (RAG)** *(in progress)*
 
-⚙️ Retrieval-Augmented Generation (RAG) (in progress)
+> 🚧 This is a **work-in-progress project** intentionally structured to reflect real-world iterative development.  
+> 💼 Recruiters: This README clearly outlines what’s complete, what’s underway, and how each part reflects applied AI/ML and data engineering skills.
 
-🚧 This is a work-in-progress project intentionally structured to reflect real-world iterative development. Recruiters: See below for what’s complete and how each part demonstrates relevant technical skill.
+---
 
-**🔍 Project Goal
-Build a smart travel assistant that recommends destinations using natural language inputs and integrates:
+## 🔍 Project Goal
 
-LLMs via Hugging Face
+Build a smart travel assistant that recommends destinations using natural language queries and integrates:
 
-Custom dataset curation (TripAdvisor + European destination data)
+- LLMs via Hugging Face Transformers  
+- Custom dataset curation from TripAdvisor and European tourism sources  
+- Vector search using FAISS  
+- Text embedding using Sentence Transformers  
+- Comparison of different LLM-based strategies for recommendation
 
-Vector search with FAISS
+---
 
-Text embeddings via Sentence Transformers
+## ✅ Completed Components
 
-Evaluation and optimization across LLM techniques
+### 1. 🔧 Prompt Engineering
 
-**✅ Completed Components
-1. 🔧 Prompt Engineering
-Developed a structured prompt template for travel recommendations
+- Built structured, optimized prompts to get high-quality travel suggestions from LLM APIs (OpenAI, DeepSeek)
+- Demonstrated impact of temperature, instruction clarity, and token limits
+- Designed prompt templates for reproducibility and easy testing
 
-Integrated LLM API (DeepSeek) for iteration
+### 2. 🧪 Fine-Tuning a T5 Model
 
-Demonstrated impact of prompt structure on model outputs
+- Cleaned and formatted 500-entry dataset into Hugging Face–compatible JSONL format
+- Fine-tuned a **T5 model** using the Hugging Face `Trainer` API
+- Used **PyTorch** backend with GPU acceleration
+- Implemented training checkpoints and saved the final model under:
+- Avoided overfitting by controlling input-output similarity in training data
 
-2. 🧪 Fine-Tuning with Hugging Face Transformers
-Used a cleaned and formatted JSONL dataset of travel queries
+### 3. 📁 Data Preprocessing & EDA
 
-Fine-tuned a T5 model using Hugging Face’s Trainer API
+- Combined and cleaned datasets from:
+- TripAdvisor hotel reviews
+- 2023 traveler reviews
+- European tourist destinations
+- Handled encoding issues (`utf-8`)
+- Used `pandas` and `langchain_community.document_loaders.CSVLoader`
+- Explored destination clusters and patterns for grounding LLM output
 
-Ran training locally using PyTorch with checkpoints saved and reused
+---
 
-Evaluated model output to prevent overfitting on input sequences
+## 🚧 In Progress
 
-Final model saved at: finetune/output/final-model
+### 4. 🔄 Retrieval-Augmented Generation (RAG)
 
-3. 📁 Data Preprocessing & EDA
-Merged multiple datasets (TripAdvisor, 2023 reviews, European destinations)
+- Setup includes:
+- `RecursiveCharacterTextSplitter` for document chunking
+- `HuggingFaceEmbeddings` with `all-MiniLM-L6-v2`
+- `FAISS` for semantic vector indexing
+- Status:
+- Document splitting initiated on multi-thousand row CSV corpus
+- FAISS index build is currently underway (expected due to large corpus size)
+- Next Steps:
+- Save index and test LangChain-based query inference
+- Validate RAG vs fine-tuned and prompt-based results
 
-Cleaned CSVs, handled encoding issues, removed redundancy
+---
 
-Used pandas, numpy, and langchain’s document loaders for formatting
+## 🛠️ Tech Stack
 
-Explored and visualized travel patterns to better guide model behavior
+| Tool | Purpose |
+|------|---------|
+| 🐍 Python | Core programming |
+| 🧠 Hugging Face Transformers | LLMs, tokenizers, fine-tuning |
+| 🔗 LangChain | RAG and embedding pipelines |
+| 🧮 FAISS | Vector similarity search |
+| 🧬 Sentence Transformers | `all-MiniLM-L6-v2` for embedding |
+| ⚙️ PyTorch | Fine-tuning backend |
+| 📊 pandas / NumPy | Data preprocessing |
+| 📁 JSONL / CSV | Dataset formats |
+| 💻 VS Code | Dev environment |
+| 🧪 Jupyter | Local EDA experiments |
 
-**🚧 In Progress
-4. 🔄 RAG (Retrieval-Augmented Generation)
-Set up LangChain pipeline using:
+---
 
-RecursiveCharacterTextSplitter
-
-HuggingFaceEmbeddings (all-MiniLM-L6-v2)
-
-FAISS for similarity search
-
-Current status: Indexing is taking unusually long due to large corpus size
-
-Next Steps:
-
-Monitor and optimize document splitting
-
-Finalize vectorstore saving/loading
-
-Connect RAG to inference script for hybrid QA generation
-
-**🛠️ Tech Stack
-Tool	Purpose
-🐍 Python	Core programming
-🧠 Hugging Face Transformers	LLMs, tokenizers, fine-tuning
-🔗 LangChain	RAG + Embedding pipeline
-🧮 FAISS	Vector store for semantic search
-🔤 Sentence Transformers	all-MiniLM-L6-v2 for embedding
-⚙️ PyTorch	Model training backend
-📊 Pandas / NumPy	Data prep and transformation
-📁 JSONL / CSV	Data formats
-
+## 📁 Folder Structure
 travel-llm-recommender/
-│
 ├── finetune/
-│   ├── prepare_data.py
-│   ├── train.py
-│   ├── dataset.jsonl
-│   └── output/
+│ ├── prepare_data.py
+│ ├── train.py
+│ ├── dataset.jsonl
+│ └── output/
+│ └── final-model/
 │
 ├── rag/
-│   ├── build_index.py      ← [Indexing logic]
-│   ├── querry_rag.py       ← [Querying interface]
+│ ├── build_index.py # Indexing logic (FAISS)
+│ ├── querry_rag.py # Inference using vector store
 │
-├── datasets_raw/           ← [CSV source files]
+├── datasets_raw/ # Raw CSV datasets
 │
-└── README.md               ← [You're here]
-
-**✍️ What I Learned
-Fine-tuning a transformer model with custom data
-
-Data formatting best practices for NLP
-
-Comparative analysis of LLM techniques (prompting vs fine-tuning vs RAG)
-
-Troubleshooting LangChain and Hugging Face integration
-
-Managing real-world dataset inconsistency (encoding, structure)
-
-**📌 Why This Project Matters
-This project isn't just about the end result—it's a demonstration of:
-
-🔍 Deep understanding of LLM internals
-
-🧱 Layered architecture (modular components)
-
-🧠 Ability to evaluate and iterate between techniques
-
-🧩 Clear version control and extensibility
-
-Even though RAG is still being finalized, the depth of experimentation, full fine-tuning pipeline, and understanding of embedding-driven retrieval clearly show readiness for applied AI/ML roles.
-
-**🔜 Next Steps
-Complete FAISS indexing and connect it to RAG query script
-
-Add Streamlit UI for demo
-
-Implement unit tests for each module
-
-Optional: Dockerize and deploy inference API
+└── README.md # Project documentation
 
 
-💻 VS Code	Dev environment
+---
+
+## ✍️ What I Learned
+
+- Fine-tuning transformer models with domain-specific data
+- Vector search pipelines and hybrid LLM architectures
+- Real-world dataset issues (formatting, encoding, redundancy)
+- Comparison of prompt engineering vs. learned representations
+- Integrating tools across Hugging Face, LangChain, FAISS, and PyTorch
+
+---
+
+## 📌 Why This Project Matters
+
+This project demonstrates:
+
+- 🔍 Depth in working with LLMs at various levels (prompting, fine-tuning, RAG)
+- 🧱 Modular design that mirrors real-world system building
+- 📚 Clear separation between exploration, modeling, and retrieval
+- 🧩 Realistic challenges in large-scale unstructured data handling
+
+> 🧠 Even though RAG is still in progress, this project shows full-cycle model development, thoughtful architecture, and the ability to build and debug deep AI systems from scratch.
+
+---
+
+## 📅 Timeline of Progress
+
+| Phase | Description |
+|-------|-------------|
+| Month 1 | Dataset exploration, prompt engineering |
+| Month 2 | Fine-tuning pipeline, data cleaning, JSONL generation |
+| Month 3 | LangChain-based RAG setup, ongoing indexing and optimization |
+
+---
+
+## 🔜 Next Steps
+
+- Complete FAISS indexing and integrate RAG inference  
+- Benchmark all 3 approaches (prompting, fine-tune, RAG)  
+- Build Streamlit UI for public demo  
+- Dockerize the pipeline for reproducible deployment
+
+---
+
+## 🗂️ License
+
+MIT License. Open to collaboration.
+
+---
+
+## 🤝 Let's Connect
+
+If you're a recruiter or team looking for an AI/ML intern or junior contributor with:
+- Real experience across Hugging Face, LangChain, FAISS
+- Project architecture skills
+- Attention to reproducibility and clarity
+
+Feel free to reach out or connect via [LinkedIn](#) or [GitHub](#).
+
+---
 
