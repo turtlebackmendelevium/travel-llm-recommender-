@@ -101,7 +101,20 @@ travel-llm-recommender/
 ├── datasets_raw/               # Raw CSV datasets
 └── README.md                   # Project documentation
 ```
+---
 
+## 📦 Download Required Datasets
+
+To keep the repository lightweight, large data folders are hosted externally on Google Drive.  
+Please manually download and extract the following folders:
+
+- [`datasets_raw/`](https://drive.google.com/drive/folders/1VKZX22fWZjsI6xKxy8oFEc2UxH3_V5Nz?usp=sharing) – Raw CSVs and travel data
+
+
+### How to Set Up:
+
+1. Click each link above and choose **“Download”** from the Google Drive interface.
+2. Google will deliver a `.zip`; unzip it on your machine.
 
 ---
 
