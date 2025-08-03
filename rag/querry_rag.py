@@ -6,7 +6,7 @@ from langchain.chains import RetrievalQA
 from langchain_huggingface import HuggingFaceEndpoint
 
 # === Set Hugging Face API Token ===
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "HF_TOKEN"
 
 # === Set up paths and model ===
 INDEX_PATH = "rag_index"
@@ -35,10 +35,10 @@ Answer:
 
 # === Use HuggingFaceEndpoint with supported model ===
 llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",
+    repo_id="HF_TOKEN",
     temperature=0.7,
     max_new_tokens=512,
-    huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
+    huggingfacehub_api_token=os.getenv("HF_TOKEN")
 )
 
 # === Setup RetrievalQA chain ===
